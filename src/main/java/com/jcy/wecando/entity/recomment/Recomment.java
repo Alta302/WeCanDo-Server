@@ -1,7 +1,6 @@
-package com.jcy.wecando.entity.comment;
+package com.jcy.wecando.entity.recomment;
 
-import com.jcy.wecando.entity.done.Done;
-import com.jcy.wecando.entity.recomment.Recomment;
+import com.jcy.wecando.entity.comment.Comment;
 import com.jcy.wecando.entity.user.User;
 import lombok.*;
 
@@ -14,23 +13,20 @@ import java.time.LocalDateTime;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Comment {
+public class Recomment {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long commentId;
+    private Long recommentId;
 
     @ManyToOne
     @JoinColumn(name = "id")
     private User user;
 
     @ManyToOne
-    @JoinColumn(name = "doneId")
-    private Done done;
+    @JoinColumn(name = "comment_id")
+    private Comment commentId;
 
     private String comment;
 
     private LocalDateTime writeAt;
-
-    @OneToMany(mappedBy = "comment", cascade = CascadeType.ALL)
-    private List<Recomment> recomments;
 }

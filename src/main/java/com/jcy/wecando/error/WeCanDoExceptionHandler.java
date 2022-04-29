@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 public class WeCanDoExceptionHandler {
 
     @ExceptionHandler(WeCanDoException.class)
-    protected ResponseEntity<ErrorResponse> handlerExceptions(final DonutException e) {
+    protected ResponseEntity<ErrorResponse> handlerExceptions(final WeCanDoException e) {
         log.error(e.getMessage());
 
         final ErrorCode errorCode = e.getErrorCode();
