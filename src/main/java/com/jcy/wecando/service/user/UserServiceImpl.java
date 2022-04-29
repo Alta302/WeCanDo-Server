@@ -1,8 +1,6 @@
 package com.jcy.wecando.service.user;
 
 import com.jcy.wecando.entity.comment.repository.CommentRepository;
-import com.jcy.wecando.entity.friend.repository.FriendRepository;
-import com.jcy.wecando.entity.recomment.repository.RecommentRepository;
 import com.jcy.wecando.entity.refresh_token.repository.RefreshTokenRepository;
 import com.jcy.wecando.entity.user.User;
 import com.jcy.wecando.entity.user.repository.UserRepository;
@@ -22,7 +20,6 @@ public class UserServiceImpl implements UserService{
     private final UserRepository userRepository;
     private final DoneRepository doneRepository;
     private final CommentRepository commentRepository;
-    private final RecommentRepository recommentRepository;
     private final RefreshTokenRepository refreshTokenRepository;
 
     private final JwtProvider jwtProvider;
